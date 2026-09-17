@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://ukggayuiubos"]
+
+[ext_resource type="Script" uid="uid://b7d175o14kird" path="res://scripts/menu_des_touches.gd" id="1_4bybx"]
+[ext_resource type="Texture2D" uid="uid://djkul1ewnt5jb" path="res://assets/fond espace.jpg" id="1_tjubh"]
+[ext_resource type="Texture2D" uid="uid://dwufn3hgm5oca" path="res://assets/keyboard_z_outline.png" id="2_a3sja"]
+[ext_resource type="Texture2D" uid="uid://cmx7a5wowkges" path="res://assets/keyboard_s_outline.png" id="3_ubjsj"]
+[ext_resource type="Texture2D" uid="uid://c0p6iifdaver" path="res://assets/keyboard_d_outline.png" id="4_4bybx"]
+[ext_resource type="Texture2D" uid="uid://qmgs1l4i7x6w" path="res://assets/keyboard_q_outline.png" id="5_ryofq"]
+[ext_resource type="Texture2D" uid="uid://rinuqh32sdqf" path="res://assets/keyboard_space_outline.png" id="6_lrhfv"]
+[ext_resource type="Texture2D" uid="uid://ca3uthjsdpa7q" path="res://assets/keyboard_w_outline.png" id="8_lrhfv"]
+[ext_resource type="Texture2D" uid="uid://fw4y8xqwvb8x" path="res://assets/keyboard_a_outline.png" id="9_0f5ki"]
+
+[node name="Menu des touches" type="Control" unique_id=987834925]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4bybx")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=500904556]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tjubh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=921037671]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -514.0
+offset_top = 203.0
+offset_right = 514.0
+offset_bottom = 436.0
+grow_horizontal = 2
+
+[node name="menu des touches" type="Label" parent="VBoxContainer" unique_id=1316199541]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Menu des touches"
+
+[node name="text" type="Label" parent="VBoxContainer" unique_id=45986131]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Voici les touches que vous pouvez utiliser (vous pouvez également 
+utiliser les flèche directionnelles) :
+"
+horizontal_alignment = 1
+
+[node name="Retour menu" type="Button" parent="." unique_id=1573715680]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -204.0
+offset_top = -163.0
+offset_right = 204.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Retour au menu"
+
+[node name="Touches azerty" type="VBoxContainer" parent="." unique_id=266206974]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 472.0
+offset_right = 847.0
+offset_bottom = 905.0
+
+[node name="text2" type="Label" parent="Touches azerty" unique_id=373047247]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Pour un clavier azerty :"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Touches azerty" unique_id=449226430]
+layout_mode = 2
+
+[node name="z" type="TextureRect" parent="Touches azerty/HBoxContainer" unique_id=1794177409]
+layout_mode = 2
+texture = ExtResource("2_a3sja")
+
+[node name="Haut" type="Label" parent="Touches azerty/HBoxContainer" unique_id=52408142]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Haut"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Touches azerty" unique_id=1692729931]
+layout_mode = 2
+
+[node name="q" type="TextureRect" parent="Touches azerty/HBoxContainer2" unique_id=953952568]
+layout_mode = 2
+texture = ExtResource("5_ryofq")
+
+[node name="Gauche" type="Label" parent="Touches azerty/HBoxContainer2" unique_id=724175164]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Gauche"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Touches azerty" unique_id=173931504]
+layout_mode = 2
+
+[node name="d" type="TextureRect" parent="Touches azerty/HBoxContainer3" unique_id=1222633421]
+layout_mode = 2
+texture = ExtResource("4_4bybx")
+
+[node name="Droite" type="Label" parent="Touches azerty/HBoxContainer3" unique_id=245260921]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Droite"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Touches azerty" unique_id=1090702480]
+layout_mode = 2
+
+[node name="s" type="TextureRect" parent="Touches azerty/HBoxContainer4" unique_id=1892212926]
+layout_mode = 2
+texture = ExtResource("3_ubjsj")
+
+[node name="Bas" type="Label" parent="Touches azerty/HBoxContainer4" unique_id=462028167]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Bas"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Touches azerty" unique_id=1047836413]
+layout_mode = 2
+
+[node name="space" type="TextureRect" parent="Touches azerty/HBoxContainer5" unique_id=772600577]
+layout_mode = 2
+texture = ExtResource("6_lrhfv")
+
+[node name="Tirer" type="Label" parent="Touches azerty/HBoxContainer5" unique_id=1193360552]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Tirer"
+
+[node name="Touches qwerty" type="VBoxContainer" parent="." unique_id=91587339]
+layout_mode = 0
+offset_left = 1059.0
+offset_top = 472.0
+offset_right = 1424.0
+offset_bottom = 905.0
+
+[node name="text2" type="Label" parent="Touches qwerty" unique_id=1199668006]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Pour un clavier qwerty :"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Touches qwerty" unique_id=1877622611]
+layout_mode = 2
+
+[node name="w" type="TextureRect" parent="Touches qwerty/HBoxContainer" unique_id=1115668585]
+layout_mode = 2
+texture = ExtResource("8_lrhfv")
+
+[node name="Haut" type="Label" parent="Touches qwerty/HBoxContainer" unique_id=423668258]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Haut"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Touches qwerty" unique_id=608560405]
+layout_mode = 2
+
+[node name="a" type="TextureRect" parent="Touches qwerty/HBoxContainer2" unique_id=1185018401]
+layout_mode = 2
+texture = ExtResource("9_0f5ki")
+
+[node name="Gauche" type="Label" parent="Touches qwerty/HBoxContainer2" unique_id=1385247970]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Gauche"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Touches qwerty" unique_id=1316200097]
+layout_mode = 2
+
+[node name="d" type="TextureRect" parent="Touches qwerty/HBoxContainer3" unique_id=1837334134]
+layout_mode = 2
+texture = ExtResource("4_4bybx")
+
+[node name="Droite" type="Label" parent="Touches qwerty/HBoxContainer3" unique_id=1167498633]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Droite"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Touches qwerty" unique_id=1568138397]
+layout_mode = 2
+
+[node name="s" type="TextureRect" parent="Touches qwerty/HBoxContainer4" unique_id=1226443518]
+layout_mode = 2
+texture = ExtResource("3_ubjsj")
+
+[node name="Bas" type="Label" parent="Touches qwerty/HBoxContainer4" unique_id=1196993967]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Bas"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Touches qwerty" unique_id=1927181180]
+layout_mode = 2
+
+[node name="space" type="TextureRect" parent="Touches qwerty/HBoxContainer5" unique_id=1268622729]
+layout_mode = 2
+texture = ExtResource("6_lrhfv")
+
+[node name="Tirer" type="Label" parent="Touches qwerty/HBoxContainer5" unique_id=738749637]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Tirer"
+
+[connection signal="button_down" from="Retour menu" to="." method="_on_retour_menu_button_down"]

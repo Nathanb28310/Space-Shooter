@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cw2j2bb7ly4en"]
+
+[ext_resource type="Script" uid="uid://dg0ew4681oxyo" path="res://scripts/mort.gd" id="1_57w8p"]
+[ext_resource type="AudioStream" uid="uid://dvq55a4vpxpg1" path="res://sons/game-over-sound.mp3" id="2_118nc"]
+[ext_resource type="Texture2D" uid="uid://djkul1ewnt5jb" path="res://assets/fond espace.jpg" id="2_jrw7o"]
+
+[node name="Mort" type="Control" unique_id=1564761402]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_57w8p")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1917211854]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jrw7o")
+flip_h = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=435517281]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 60.0
+offset_right = 150.0
+offset_bottom = 171.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="Restart" type="Button" parent="VBoxContainer" unique_id=2050791836]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Recommencer"
+
+[node name="Menu principal" type="Button" parent="VBoxContainer" unique_id=1990250831]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Menu principal"
+
+[node name="Crédits" type="Button" parent="VBoxContainer" unique_id=739874649]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Crédits"
+
+[node name="Quitter" type="Button" parent="VBoxContainer" unique_id=371591354]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quitter"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1630136516]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 350.0
+offset_bottom = 350.0
+grow_horizontal = 2
+theme_override_constants/separation = 5
+
+[node name="Game Over" type="Label" parent="VBoxContainer2" unique_id=1384233344]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Game Over"
+
+[node name="Score" type="Label" parent="VBoxContainer2" unique_id=902486029]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Votre score est de : X"
+
+[node name="Game Over sound" type="AudioStreamPlayer" parent="." unique_id=482497363]
+stream = ExtResource("2_118nc")
+volume_db = -10.0
+
+[connection signal="button_down" from="VBoxContainer/Restart" to="." method="_on_restart_button_down"]
+[connection signal="button_down" from="VBoxContainer/Menu principal" to="." method="_on_menu_principal_button_down"]
+[connection signal="button_down" from="VBoxContainer/Crédits" to="." method="_on_crédits_button_down"]
+[connection signal="button_down" from="VBoxContainer/Quitter" to="." method="_on_quitter_button_down"]

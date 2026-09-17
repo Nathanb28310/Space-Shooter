@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://ct5tlvubvldsd"]
+
+[ext_resource type="Script" uid="uid://ctu6ihtgydaqt" path="res://scripts/terre.gd" id="1_4wbop"]
+[ext_resource type="Texture2D" uid="uid://ctq2yix3vfng7" path="res://assets/Terre_version_paint.png" id="2_k4gud"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bbard"]
+radius = 174.48495
+
+[sub_resource type="Animation" id="Animation_4wbop"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_7cqta"]
+resource_name = "rotation Terre"
+length = 15.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bbard"]
+_data = {
+&"RESET": SubResource("Animation_4wbop"),
+&"rotation Terre": SubResource("Animation_7cqta")
+}
+
+[node name="Terre" type="Area2D" unique_id=1336452141]
+collision_mask = 2
+script = ExtResource("1_4wbop")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1965787617]
+scale = Vector2(0.8, 0.817)
+texture = ExtResource("2_k4gud")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=766113208]
+position = Vector2(5, 14)
+shape = SubResource("CircleShape2D_bbard")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=177627248]
+libraries/ = SubResource("AnimationLibrary_bbard")
+autoplay = &"rotation Terre"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

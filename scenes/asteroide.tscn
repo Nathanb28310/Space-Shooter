@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cpmm3cs37iv3v"]
+
+[ext_resource type="Script" uid="uid://3mjytbd4h7ww" path="res://scripts/asteroide.gd" id="1_3pxu8"]
+[ext_resource type="Texture2D" uid="uid://b4nbgomtcq15l" path="res://assets/meteorBrown_big3.png" id="1_dvfjc"]
+
+[sub_resource type="Animation" id="Animation_3pxu8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_iprs4"]
+resource_name = "rotation asteroide"
+length = 7.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.283185307179586]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rgols"]
+_data = {
+&"RESET": SubResource("Animation_3pxu8"),
+&"rotation asteroide": SubResource("Animation_iprs4")
+}
+
+[node name="asteroide" type="Area2D" unique_id=2007164980]
+scale = Vector2(1.2, 1.2)
+collision_layer = 2
+script = ExtResource("1_3pxu8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1119608495]
+texture = ExtResource("1_dvfjc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=108443265]
+polygon = PackedVector2Array(-29, 34, 21, 42, 46, 1, 29, -29, -10, -42, -45, -20, -43, 15)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1736070469]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=19382587]
+libraries/ = SubResource("AnimationLibrary_rgols")
+autoplay = &"rotation asteroide"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

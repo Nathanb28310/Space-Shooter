@@ -1,0 +1,182 @@
+[gd_scene format=3 uid="uid://dbvmjha8vqw4l"]
+
+[ext_resource type="Script" uid="uid://ba24npbq34nk1" path="res://scripts/menu.gd" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://djkul1ewnt5jb" path="res://assets/fond espace.jpg" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://2hwmib4hs2xg" path="res://assets/playerShip2_blue.png" id="3_4ytvr"]
+[ext_resource type="FontFile" uid="uid://bkfjdn7o80ev2" path="res://police/Xolonium-Regular.ttf" id="3_g3eks"]
+[ext_resource type="Texture2D" uid="uid://wf80scoobans" path="res://assets/laserBlue01.png" id="4_g3eks"]
+[ext_resource type="Texture2D" uid="uid://b4nbgomtcq15l" path="res://assets/meteorBrown_big3.png" id="5_v86rl"]
+[ext_resource type="Texture2D" uid="uid://b6j234sfk301y" path="res://assets/Vaisseau_version_paint.png" id="7_i6lef"]
+[ext_resource type="Texture2D" uid="uid://bk5wxwl2eatrh" path="res://assets/laser_version_paint.png" id="8_70i5f"]
+[ext_resource type="Texture2D" uid="uid://b5l5fhongbhl" path="res://assets/asteroide_version_paint.png" id="9_mj5lg"]
+
+[node name="Menu" type="Control" unique_id=1264960060]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lti8b")
+
+[node name="fond" type="TextureRect" parent="." unique_id=1098037256]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vjb58")
+
+[node name="Menu principal" type="Label" parent="." unique_id=673925856]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.2824074
+anchor_right = 0.5
+anchor_bottom = 0.2824074
+offset_left = -232.0
+offset_top = 45.0
+offset_right = 232.0
+offset_bottom = 133.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "Menu principal"
+metadata/_edit_use_anchors_ = true
+
+[node name="Space Shooter" type="Label" parent="." unique_id=1989780632]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -390.0
+offset_top = 66.0
+offset_right = 391.0
+offset_bottom = 186.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.71, 0.71, 0.71, 1)
+theme_override_fonts/font = ExtResource("3_g3eks")
+theme_override_font_sizes/font_size = 100
+text = "Space Shooter"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=593856960]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 60.0
+offset_right = 150.0
+offset_bottom = 171.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="Jouer" type="Button" parent="VBoxContainer" unique_id=1792396374]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Jouer"
+
+[node name="Touches" type="Button" parent="VBoxContainer" unique_id=1562227419]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Touches
+"
+
+[node name="Crédits" type="Button" parent="VBoxContainer" unique_id=1761769030]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Crédits"
+
+[node name="Quitter" type="Button" parent="VBoxContainer" unique_id=1047017377]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quitter"
+
+[node name="version normal" type="CanvasLayer" parent="." unique_id=802056221]
+
+[node name="PlayerShip2Blue" type="Sprite2D" parent="version normal" unique_id=227141113]
+position = Vector2(320, 540)
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_4ytvr")
+
+[node name="LaserBlue01" type="Sprite2D" parent="version normal" unique_id=1543611648]
+position = Vector2(545, 540)
+rotation = 1.5707964
+texture = ExtResource("4_g3eks")
+
+[node name="LaserBlue03" type="Sprite2D" parent="version normal" unique_id=1773910200]
+position = Vector2(921, 907)
+rotation = 1.5707964
+texture = ExtResource("4_g3eks")
+
+[node name="LaserBlue02" type="Sprite2D" parent="version normal" unique_id=796233137]
+position = Vector2(1064, 271)
+rotation = 1.5707964
+texture = ExtResource("4_g3eks")
+
+[node name="MeteorBrownBig3" type="Sprite2D" parent="version normal" unique_id=1787498687]
+position = Vector2(1311, 540)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("5_v86rl")
+
+[node name="MeteorBrownBig5" type="Sprite2D" parent="version normal" unique_id=590081003]
+position = Vector2(1425, 890)
+rotation = -0.6824237
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("5_v86rl")
+
+[node name="MeteorBrownBig4" type="Sprite2D" parent="version normal" unique_id=524812108]
+position = Vector2(1539, 264.99997)
+rotation = -1.9809487
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("5_v86rl")
+
+[node name="version paint" type="CanvasLayer" parent="." unique_id=2134923497]
+
+[node name="PlayerShip2Blue" type="Sprite2D" parent="version paint" unique_id=1213968241]
+position = Vector2(321, 533)
+scale = Vector2(0.3, 0.294)
+texture = ExtResource("7_i6lef")
+
+[node name="LaserBlue01" type="Sprite2D" parent="version paint" unique_id=150679085]
+position = Vector2(545, 540)
+rotation = 1.5707964
+texture = ExtResource("8_70i5f")
+
+[node name="LaserBlue03" type="Sprite2D" parent="version paint" unique_id=944481321]
+position = Vector2(921, 907)
+rotation = 1.5707964
+texture = ExtResource("8_70i5f")
+
+[node name="LaserBlue02" type="Sprite2D" parent="version paint" unique_id=1401580758]
+position = Vector2(1064, 271)
+rotation = 1.5707964
+texture = ExtResource("8_70i5f")
+
+[node name="MeteorBrownBig3" type="Sprite2D" parent="version paint" unique_id=438716668]
+position = Vector2(1311, 540)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("9_mj5lg")
+
+[node name="MeteorBrownBig5" type="Sprite2D" parent="version paint" unique_id=724933980]
+position = Vector2(1425, 890)
+rotation = -0.6824237
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("9_mj5lg")
+
+[node name="MeteorBrownBig4" type="Sprite2D" parent="version paint" unique_id=911535623]
+position = Vector2(1539, 264.99997)
+rotation = -1.9809487
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("9_mj5lg")
+
+[connection signal="button_down" from="VBoxContainer/Jouer" to="." method="_on_jouer_button_down"]
+[connection signal="button_down" from="VBoxContainer/Touches" to="." method="_on_touches_button_down"]
+[connection signal="button_down" from="VBoxContainer/Crédits" to="." method="_on_crédits_button_down"]
+[connection signal="button_down" from="VBoxContainer/Quitter" to="." method="_on_quitter_button_down"]

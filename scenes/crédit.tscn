@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://8013dbjo6dob"]
+
+[ext_resource type="Texture2D" uid="uid://djkul1ewnt5jb" path="res://assets/fond espace.jpg" id="1_78g6e"]
+[ext_resource type="Script" uid="uid://bou2ueaf58341" path="res://scripts/crédit.gd" id="1_yoj75"]
+[ext_resource type="Texture2D" uid="uid://2v24b81gpxxg" path="res://assets/Ma pp.jpg" id="3_2obp0"]
+
+[node name="Crédit" type="Control" unique_id=1087661291]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yoj75")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=784720202]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_78g6e")
+
+[node name="crédit" type="Label" parent="." unique_id=1950014009]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -126.5
+offset_top = 144.0
+offset_right = 126.5
+offset_bottom = 232.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "Crédits :"
+
+[node name="remerciment" type="Label" parent="." unique_id=191122347]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_top = 303.0
+offset_right = 878.0
+offset_bottom = 732.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "MERCI d'avoir télécharger mon jeu et d'y avoir jouer ! 
+Ça fait plaisir de fou !
+
+Ce jeu a été réalisé par mes soins avec l'aide de tutos youtube
+et avec mes propres connaissances.
+Les assets 2D ainsi que les sons ont été récupéré sur internet
+
+Ce jeu est ma première réalisation, c'est le début d'une aventure 
+je l'espère."
+
+[node name="NB Games" type="Label" parent="." unique_id=468442335]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -635.0
+offset_top = 745.0
+offset_right = -474.0
+offset_bottom = 790.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "NB Games"
+
+[node name="MaPp" type="Sprite2D" parent="." unique_id=1738904575]
+position = Vector2(414, 505)
+texture = ExtResource("3_2obp0")
+
+[node name="Quitter" type="Button" parent="." unique_id=1251012954]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 783.0
+offset_top = 841.0
+offset_right = 1137.0
+offset_bottom = 894.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Menu principal"
+
+[node name="Mode paint" type="Button" parent="." unique_id=1950684922]
+layout_mode = 0
+offset_left = 782.0
+offset_top = 978.0
+offset_right = 1140.0
+offset_bottom = 1031.0
+theme_override_font_sizes/font_size = 32
+text = "Mode paint"
+
+[node name="mode paint" type="Label" parent="." unique_id=814481144]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 149.0
+offset_top = 912.0
+offset_right = 1772.0
+offset_bottom = 957.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Voici un petit bonus pour mon premier jeu : un mode paint, avec des assets et des sons fait par mes soins"
+
+[connection signal="button_down" from="Quitter" to="." method="_on_quitter_button_down"]
+[connection signal="button_down" from="Mode paint" to="." method="_on_mode_paint_button_down"]

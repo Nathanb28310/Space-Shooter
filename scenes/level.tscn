@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cmroqumba2461"]
+
+[ext_resource type="Script" uid="uid://dgameweq8vu15" path="res://scripts/level.gd" id="1_oi3di"]
+[ext_resource type="PackedScene" uid="uid://2yyged5ewspv" path="res://scenes/player.tscn" id="2_w8frs"]
+[ext_resource type="PackedScene" uid="uid://ct5tlvubvldsd" path="res://scenes/terre.tscn" id="3_mx8sn"]
+[ext_resource type="Texture2D" uid="uid://djkul1ewnt5jb" path="res://assets/fond espace.jpg" id="3_ppgk2"]
+[ext_resource type="AudioStream" uid="uid://7ievnvgfeja" path="res://sons/Gros Boom.wav" id="5_ppgk2"]
+
+[node name="Level" type="Node2D" unique_id=479087516]
+script = ExtResource("1_oi3di")
+
+[node name="Player" parent="." unique_id=1672100676 instance=ExtResource("2_w8frs")]
+z_index = 10
+position = Vector2(605, 540)
+scale = Vector2(1.5, 1.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=922652095]
+layer = -10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=49251088]
+z_index = -50
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ppgk2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=302939766]
+z_index = 1000
+offset_left = 5.0
+offset_right = 139.0
+offset_bottom = 69.0
+theme_override_constants/separation = 0
+
+[node name="Vie Joueur" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=2017936525]
+layout_mode = 2
+text = "Vie du Joueur : X"
+
+[node name="Vie Terre" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=2066605971]
+layout_mode = 2
+text = "Vie de la Terre : X"
+
+[node name="Score" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1643477941]
+layout_mode = 2
+text = "Score : X"
+
+[node name="Timer" type="Timer" parent="." unique_id=59366072]
+autostart = true
+
+[node name="Explosion" type="AudioStreamPlayer2D" parent="." unique_id=51951040]
+stream = ExtResource("5_ppgk2")
+
+[node name="Asteroide" type="Node2D" parent="." unique_id=1287804165]
+
+[node name="Terre" parent="." unique_id=1336452141 instance=ExtResource("3_mx8sn")]
+z_index = -10
+position = Vector2(-57, 555)
+scale = Vector2(2.77, 2.77)
+
+[connection signal="mort" from="Player" to="." method="prendre_degat_joueur"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="degat" from="Terre" to="." method="prendre_degat_terre"]
