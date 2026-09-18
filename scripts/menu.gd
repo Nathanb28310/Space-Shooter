@@ -6,6 +6,8 @@ extends Control
 @onready var fond = $fond
 
 func _ready() -> void:
+	if OS.has_feature("web") :
+		$VBoxContainer/Quitter.hide()
 	if Global.choix_skin == "normal" :
 		fond.texture = preload("res://assets/fond espace.jpg")
 		$"version paint".hide()

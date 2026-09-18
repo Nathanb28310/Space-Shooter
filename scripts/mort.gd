@@ -4,6 +4,8 @@ extends Control
 @onready var fond = $TextureRect
 
 func _ready() -> void:
+	if OS.has_feature("web") :
+		$VBoxContainer/Quitter.hide()
 	update_score()
 	game_over_sound.play()
 	if Global.choix_skin == "normal" :
