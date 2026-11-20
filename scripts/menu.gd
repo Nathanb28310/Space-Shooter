@@ -19,6 +19,7 @@ func _ready() -> void:
 		
 	
 func _on_jouer_button_down() -> void: 
+	Global.score = 0 
 	get_tree().change_scene_to_packed(level)
 
 func _on_quitter_button_down() -> void:
